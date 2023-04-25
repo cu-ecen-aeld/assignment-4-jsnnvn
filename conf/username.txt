@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 jsnnvn
+=======
+aesd-private-repo
+>>>>>>> buildroot-assignments-base/master
