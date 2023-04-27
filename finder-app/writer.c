@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     char *string = argv[2];//text to be put in file 
     
     FILE *file = fopen(filename, "w");//point to file and open to write
-    if (!file) 
+    if (file == NULL) 
     {
         syslog(LOG_ERR, "Error opening file %s\n", filename);//check if file is successfully opened otherwise error
         exit(1);
