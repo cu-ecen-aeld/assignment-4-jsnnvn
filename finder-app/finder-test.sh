@@ -56,7 +56,7 @@ touch "/tmp/assignment4-result.txt"
 for i in $( seq 1 $NUMFILES)
 do
 #./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
-	writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	writer "$WRITEDIR/assignment4-result$i.txt" "$WRITESTR"
 done
 echo "debug 2"
 rm "messages"
