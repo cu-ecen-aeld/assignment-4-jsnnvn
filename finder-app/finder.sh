@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # check arguments i.e. filesdir and searchstr
 if [[ $# -ne 2 ]]; then
