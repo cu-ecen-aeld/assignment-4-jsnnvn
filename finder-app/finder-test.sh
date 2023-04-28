@@ -7,7 +7,7 @@ set -u
 
 NUMFILES=10
 WRITESTR=AELD_IS_FUN
-WRITEDIR=/tmp
+WRITEDIR=/tmp/aeld-data
 username=$(cat /etc/finder-app/conf/username.txt)
 
 if [ $# -lt 3 ]
@@ -29,8 +29,8 @@ MATCHSTR="The number of files are ${NUMFILES} and the number of matching lines a
 
 echo "Writing ${NUMFILES} files containing string ${WRITESTR} to ${WRITEDIR}"
 
-rm -rf "${WRITEDIR}/assignment4-result.txt"
-
+rm -rf "${WRITEDIR}"
+rm -rf "/tmp/assignment4-result.txt"
 # create $WRITEDIR if not assignment1
 assignment=`cat /etc/finder-app/conf/assignment.txt`
 echo "debug 1"
@@ -53,14 +53,15 @@ echo "Removing the old writer utility and compiling as a native application"
 #make
 #chmod 777 "writer"
 touch "/tmp/assignment4-result.txt"
+touch "/tmp/aeld-data/assignment4-result1.txt"
 for i in $( seq 1 $NUMFILES)
 do
 #./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 	writer "$WRITEDIR/assignment4-result$i.txt" "$WRITESTR"
 done
 echo "debug 2"
-rm "messages"
-rm "resolv.conf"
+rm -rf "/tmp/aeld-data/messages"
+rm -rf "tmp/aeld-data/resolv.conf"
 OUTPUTSTRING=$(finder.sh "$WRITEDIR" "$WRITESTR")
 
 # For Assignemnt 4 Part 2
